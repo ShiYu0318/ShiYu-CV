@@ -1,0 +1,178 @@
+% !TeX spellcheck = en_GB
+% !TeX program = xelatex
+
+\documentclass[12pt, a4paper]{article} 
+
+\usepackage[left=0mm, right=0mm, top=0mm, bottom=0mm]{geometry}
+\usepackage[stretch=25, shrink=25, tracking=true, letterspace=30]{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{marvosym}
+\usepackage{enumitem} 
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{fontawesome5}
+\usepackage{pgfpages}
+\usepackage[colorlinks=true, urlcolor=white, linkcolor=white]{hyperref}
+
+\setmainfont{Fira Sans}
+\setCJKsansfont{Noto Sans CJK TC}
+
+\definecolor{cvblue}{HTML}{304263}
+
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=\(\circ\)}
+\setlist{parsep=0pt, topsep=0pt, partopsep=1pt, itemsep=1pt, leftmargin=5mm}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+
+\pgfpagesuselayout{2 on 1}[a4paper, landscape, border shrink=0mm]
+
+\newcommand{\headleft}[1]{%
+    \vspace*{3ex}\textbf{#1}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}%
+}
+
+\newcommand{\headright}[1]{%
+    \vspace*{2.5ex}{\Large\color{cvblue}\textbf{#1}}\par%
+    \vspace*{-1.7ex}{\color{cvblue}\hrulefill}\par%
+    \vspace*{0.5ex}%
+}
+
+\newcommand{\cvsubitem}[2]{%
+    \makebox[\linewidth][s]{%
+        #1%
+        \if\relax\detokenize{#2}\relax
+            \hfill
+        \else
+            \enspace
+            \cleaders\hbox to 0.44em{\hss -\hss}\hfill
+            \enspace
+            \textbf{#2}%
+        \fi
+    }%
+}
+
+\newcommand{\cvitem}[4]{%
+    \begin{tabularx}{\textwidth}{@{} X @{}}
+        \if\relax\detokenize{#1}\relax \else {\textit{#1}} \\[0.5ex] \fi
+        \noindent
+        \makebox[\textwidth][s]{%
+            \textbullet\ \textbf{#2}% 
+            \if\relax\detokenize{#3}\relax
+                \hfill
+            \else
+                \enspace
+                \cleaders\hbox to 0.44em{\hss -\hss}\hfill
+                \enspace
+                \textbf{#3}%
+            \fi
+        } \\[0.8ex]
+        \if\relax\detokenize{#4}\relax \else
+            \begin{minipage}[t]{\linewidth}
+                \begin{itemize}[label=\textopenbullet, left=1.2em, rightmargin=0pt, topsep=0pt, partopsep=0pt, itemsep=1ex, parsep=0pt]
+                    #4
+                \end{itemize}
+            \end{minipage} \\
+        \fi
+    \end{tabularx}
+    \vspace{1.3ex}
+}
+
+\begin{document}
+\raggedbottom
+
+\begin{minipage}[t]{0.35\textwidth}
+    \colorbox{cvblue!90}{%
+        \color{white}
+        \kern0.09\textwidth\relax
+        \begin{minipage}[t][297mm][t]{0.82\textwidth}
+            \raggedright
+            \vspace*{1.5ex}
+            \begin{center}
+                \begin{tikzpicture}
+                    \clip (0,0) circle(2.5cm); 
+                    \node at (0,0) {\includegraphics[width=5cm]{Avatar.png}};
+                \end{tikzpicture} \\[1ex]
+                {\Huge Name} \\[1ex]
+                {\Large Nick Name} \\[0ex]
+            \end{center}
+            \vspace*{-1em}
+            \headleft{Bio}
+            Self-introduction
+            
+            \headleft{Tech Skills}
+            \begin{itemize}
+                \item Tech
+            \end{itemize} 
+            \vspace*{-0.5em}
+            \headleft{Skills}
+            \begin{itemize}
+                \item Skill
+            \end{itemize} 
+            \vspace*{-0.5em}
+            \headleft{Hobbies}
+            \begin{itemize}
+                \item Hobby
+            \end{itemize} 
+            \vspace*{-0.5em}
+            \headleft{Contact Details}
+            \faGlobe\ Personal Website
+            \begin{itemize}[leftmargin=3em, label=→]
+                \item \href{Link}{Name}
+            \end{itemize}
+            \faEnvelope\ {Email} \\[0.4ex]
+            \faPhone\ +886\,9XX\,XXX\,XXX \\[0.5ex]
+            \faGithub\ \href{https://github.com/user}{github.com/user} \\[0.1ex]
+        \end{minipage}%
+        \kern0.09\textwidth\relax
+    }
+\end{minipage}%
+\hskip1em
+\begin{minipage}[t]{0.6\textwidth}
+    \setlength{\parskip}{0.8ex}
+    \vspace{1ex}
+    \headright{Examination}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{Date}{Name}{Score}{
+            \item Description
+        }
+
+    \end{itemize}
+    \vspace{-2ex}
+    \headright{Certification}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{Authority}{Certification}{}{
+            \item Description
+        }
+    \end{itemize}
+    \vspace{-2ex}
+    \headright{Competition}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{Date}{Competition}{}{
+            \item \cvsubitem{Sub}{Rank}
+        }
+    \end{itemize}
+\end{minipage}
+
+\newpage
+\hskip1em
+\begin{minipage}[t]{0.95\textwidth}
+    \vspace{0ex}
+    \headright{Other}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{Date}{Name}{Position}{
+            \item Description
+        }
+    \end{itemize}
+    \vspace{-2ex}
+\end{minipage}
+\end{document}
