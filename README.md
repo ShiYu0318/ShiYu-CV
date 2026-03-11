@@ -2,7 +2,7 @@
 
 My Curriculum Vitae PDF with LaTeX Source Code and Template
 
-👉🏻 [View My CV 📄](./CV_4yu.pdf)
+👉🏻 [View My CV 📄](./ShiYu_CV.pdf)
 
 ## Files
 
