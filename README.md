@@ -16,7 +16,7 @@ You can use the CV template to create your own CV.
 
 1. Download the template:
 
-   - [`ShiYu_CV_Template.tex`](./CV_4yu_Template.tex)
+   - [`ShiYu_CV_Template.tex`](./ShiYu_CV_Template.tex)
 
 2. Edit the file with your own information.
 
