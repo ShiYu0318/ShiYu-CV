@@ -2,6 +2,8 @@
 
 My Curriculum Vitae PDF with LaTeX Source Code and Template
 
+👉🏻 [View My CV 📄](./CV_4yu.pdf)
+
 ## Files
 
 - `CV_4yu.tex` — Main CV source file
@@ -21,7 +23,7 @@ You can use the CV template to create your own CV.
 3. Compile it with LaTeX:
 
 ```bash
-pdflatex CV_4yu_Template.tex
+xelatex CV_4yu_Template.tex
 ```
 
 This will generate `CV_4yu_Template.pdf`.
