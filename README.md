@@ -1,4 +1,4 @@
-# 4yu's CV
+# ShiYu-CV
 
 My Curriculum Vitae PDF with LaTeX Source Code and Template
 
