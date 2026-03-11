@@ -1,0 +1,251 @@
+% !TeX spellcheck = en_GB
+% !TeX program = xelatex
+
+\documentclass[12pt, a4paper]{article} 
+
+\usepackage[left=0mm, right=0mm, top=0mm, bottom=0mm]{geometry}
+\usepackage[stretch=25, shrink=25, tracking=true, letterspace=30]{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{marvosym}
+\usepackage{enumitem} 
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{fontawesome5}
+\usepackage{pgfpages}
+\usepackage[colorlinks=true, urlcolor=white, linkcolor=white]{hyperref}
+
+\setmainfont{Fira Sans}
+\setCJKsansfont{Noto Sans CJK TC}
+
+\definecolor{cvblue}{HTML}{304263}
+
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=\(\circ\)}
+\setlist{parsep=0pt, topsep=0pt, partopsep=1pt, itemsep=1pt, leftmargin=5mm}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+
+\pgfpagesuselayout{2 on 1}[a4paper, landscape, border shrink=0mm]
+
+\newcommand{\headleft}[1]{%
+    \vspace*{3ex}\textbf{#1}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}%
+}
+
+\newcommand{\headright}[1]{%
+    \vspace*{2.5ex}{\Large\color{cvblue}\textbf{#1}}\par%
+    \vspace*{-1.7ex}{\color{cvblue}\hrulefill}\par%
+    \vspace*{0.5ex}%
+}
+
+\newcommand{\cvsubitem}[2]{%
+    \makebox[\linewidth][s]{%
+        #1%
+        \if\relax\detokenize{#2}\relax
+            \hfill
+        \else
+            \enspace
+            \cleaders\hbox to 0.44em{\hss -\hss}\hfill
+            \enspace
+            \textbf{#2}%
+        \fi
+    }%
+}
+
+\newcommand{\cvitem}[4]{%
+    \begin{tabularx}{\textwidth}{@{} X @{}}
+        \if\relax\detokenize{#1}\relax \else {\textit{#1}} \\[0.5ex] \fi
+        \noindent
+        \makebox[\textwidth][s]{%
+            \textbullet\ \textbf{#2}% 
+            \if\relax\detokenize{#3}\relax
+                \hfill
+            \else
+                \enspace
+                \cleaders\hbox to 0.44em{\hss -\hss}\hfill
+                \enspace
+                \textbf{#3}%
+            \fi
+        } \\[0.8ex]
+        \if\relax\detokenize{#4}\relax \else
+            \begin{minipage}[t]{\linewidth}
+                \begin{itemize}[label=\textopenbullet, left=1.2em, rightmargin=0pt, topsep=0pt, partopsep=0pt, itemsep=1ex, parsep=0pt]
+                    #4
+                \end{itemize}
+            \end{minipage} \\
+        \fi
+    \end{tabularx}
+    \vspace{1.3ex}
+}
+
+\begin{document}
+\raggedbottom
+
+\begin{minipage}[t]{0.35\textwidth}
+    \colorbox{cvblue!90}{%
+        \color{white}
+        \kern0.09\textwidth\relax
+        \begin{minipage}[t][297mm][t]{0.82\textwidth}
+            \raggedright
+            \vspace*{1.5ex}
+            \begin{center}
+                \begin{tikzpicture}
+                    \clip (0,0) circle(2.5cm); 
+                    \node at (0,0) {\includegraphics[width=5cm]{avatar.jpeg}};
+                \end{tikzpicture} \\[1ex]
+                {\Huge 黃士育} \\[1ex]
+                {\Large Shi-Yu, Huang} \\[0ex]
+            \end{center}
+            \vspace*{-1em}
+            \headleft{自我介紹（Self-introduction）}
+            就讀國立中央大學 資訊工程學系 一年級，透過特殊選才入學，高中期間為競賽程式選手，同時擔任學生資訊社群領導者與資訊社團創辦人，積極推動資訊教育。 \\[1ex]
+            目前專注於深度強化學習（DRL）與自然語言處理（NLP）領域的研究，期望能持續透過理論與實作的深度結合，在學術研究上累積經驗並貢獻創新成果。
+            
+            \headleft{技術（Tech Skills）}
+            \begin{itemize}
+                \item Python, C/C++, Java, Dart
+                \item Git, Linux, OOP, SQL, Docker
+                \item DSA（資料結構與演算法）
+                \item Scikit-learn, Keras, PyTorch, TensorFlow, LangChain
+                \item \LaTeX, Excel, PowerPoint
+            \end{itemize} 
+            \vspace*{-0.5em}
+            \headleft{技能（Skills）}
+            \begin{itemize}
+                \item 組織領導、團隊協作與溝通
+                \item 自學能力、時間規劃
+                \item 中文、英文、閩南語、越南語
+            \end{itemize} 
+            \vspace*{-0.5em}
+            \headleft{興趣（Hobbies）}
+            \begin{itemize}
+                \item 資訊安全、區塊鏈、量子計算
+                \item 3D 動畫視覺設計 (Blender)
+                \item 音樂編曲製作 (FL Studio)
+                \item 羽球、爵士鼓、扯鈴、滑板
+            \end{itemize} 
+            \vspace*{-0.5em}
+            \headleft{聯絡方式（Contact Details）}
+            \faGlobe\ Personal Website (Blog)
+            \begin{itemize}[leftmargin=3em, label=→]
+                \item \href{https://4yu.dev}{https://4yu.dev}
+            \end{itemize}
+            \faEnvelope\ {shiyu@scist.org} \\[0.4ex]
+            \faPhone\ +886\,9XX\,XXX\,XXX \\[0.5ex]
+            \faGithub\ \href{https://github.com/ShiYu0318}{github.com/ShiYu0318} \\[0.1ex]
+        \end{minipage}%
+        \kern0.09\textwidth\relax
+    }
+\end{minipage}%
+\hskip1em
+\begin{minipage}[t]{0.6\textwidth}
+    \setlength{\parskip}{0.8ex}
+    \vspace{1ex}
+    \headright{檢定（Examination）}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{2025/06（高三）}{APCS 大學程式設計先修檢測}{滿級分（全國前 1\%）}{
+            \item 觀念題 5 級分（92/100）+ 實作題 5 級分（400/400）
+        }
+        \item \cvitem{}{CPE 大學程式能力檢定}{Expert（專家級）}{
+            \item Solve 6/7, 全國排名前 0.6\%
+        }
+    \end{itemize}
+    \vspace{-2ex}
+    \headright{證照（Certification）}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{Microsoft}{Azure AI Engineer (AI-102)}{}{
+            \item 設計與部署 AI 解決方案、整合 Azure 認知服務與機器學習模型
+        }
+        \item \cvitem{Certiport / Pearson VUE}{ITS Artificial Intelligence}{}{
+            \item AI 問題定義、資料處理、模型建構與部署實作
+        }
+        \item \cvitem{Amazon Web Services}{AWS Certified AI Practitioner}{}{
+            \item AI 與機器學習基本概念、AWS AI/ML 服務應用
+        }
+        \item \cvitem{Microsoft}{Azure AI Fundamentals (AI-900)}{}{
+            \item AI 核心概念、Azure 認知服務與機器學習工作負載基礎
+        }
+        \item \cvitem{財團法人資訊工業策進會}{生成式 AI 能力認證}{}{
+            \item 生成式 AI 核心知識、應用場景、倫理與法律議題
+        }
+        \item \cvitem{臺灣人工智慧學校}{AI 素養級認證 (AIATCL™)}{}{
+            \item 人工智慧基本概念、應用範例與實務入門
+        }
+    \end{itemize}
+    \vspace{-2ex}
+    \headright{競賽（Competition）}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{}{Fun AI Winter Camp}{}{
+            \item \cvsubitem{2025 RL 競賽}{第 3 名}
+            \item \cvsubitem{2024}{個人表現特優獎}
+        }
+        \item \cvitem{}{教育部普通型高級中等學校數理及資訊學科能力競賽 - 資訊科}{}{
+            \item \cvsubitem{112、113 學年度分區複賽}{佳作}
+            \item \cvsubitem{全國模擬賽}{第 31/149 名}
+        }
+        \item \cvitem{2023/07}{第十一屆高一生程式設計排名賽}{全國第 8 名}{}
+        \item \cvitem{2024/08}{第十屆國立成功大學暑期高中生程式設計邀請賽}{晉級全國決賽}{}
+        \item \cvitem{}{AIS3 Junior 2024 新型態高中職資安課程}{最佳專題獎}{}
+    \end{itemize}
+\end{minipage}
+
+\newpage
+\hskip1em
+\begin{minipage}[t]{0.95\textwidth}
+    \vspace{0ex}
+    \headright{社群貢獻＆社團經營}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{2025/09（大一） -- Present}{GDGoC @NCU Coreteam}{技術組課程講師＆ AI Team 專案經理}{
+            \item Google 學生開發者社群 (Google Developer Group on Campus)
+        }
+        \item \cvitem{2024/07 -- 2025/08（高三）}{SCIST 南臺灣學生資訊社群 - 第 5 屆}{總召＆演算法助教}{
+            \item 社群人數達 3000 人，領導 20 人行政團隊，深耕南部長期推動資訊教育 \\ 同時創造大量線上學習資源促進全臺學生資訊能力
+            \item 每學年度舉辦資訊人才培育計畫，提供免費的演算法與資訊安全實體培訓課程 \\ 並於寒假聯合多校社團舉辦實體資訊營隊
+            \item 撰寫 35 頁社群計畫書透過提案獲得精誠資訊、奧義智慧科技、DEVCORE、HackMD、 \\ 台灣駭客協會 HIT、AIS3 Club 與財團法人可成教育基金會贊助，總金額達 30 萬元
+        }
+        \item \cvitem{2023/07（高二）-- 2025/06（高三）}{NFIRC 南大附中資訊研究社 - 第 1 屆}{創始社長＆社課講師}{
+            \item 從 0 開始創辦高中新社團，自編 2.5 萬字程式入門教材並親自授課 \\ 舉辦程式競賽與聯合社課，製作第一屆成果年刊獲得校內期末社團評鑑 特優
+        }
+        \item \cvitem{2020/09（國二）-- 2022/06（國三）}{嘉義縣竹崎高中（國中部）科技社 - 第 1 屆}{創始社長＆資訊校隊}{
+            \item 國中時在科技中心協助下創辦新社團，代表學校贏得科技教育創意實作競賽特優 \\ 全國貓咪盃與全國遙控帆船大賽等競賽獎項
+        }
+    \end{itemize}
+    \vspace{-2ex}
+    \headright{講師＆助教（擁有約 3 年教學經驗，累計超過 500 小時，破千位學生）}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \item \cvitem{2025 -- 2026}{GDGoC @NCU 中央大學 Google 學生者開發社群}{講師}{
+            \item \cvsubitem{AI 概論與 ML 實作課程}{6 hr}
+            \item \cvsubitem{生成式 AI 應用實作課程：Discord Bot + LLM (API \& Ollama)}{4 hr}
+            \item \cvsubitem{LLM 進階實作課程：RAG（檢索增強生成）、LoRA（低秩自適應微調）}{4 hr}
+        }
+        \item \cvitem{}{SCIST Camp 年度多校資訊社聯合寒訓}{講師}{
+            \item \cvsubitem{2026 SCIST x SCAICT x 成大電機 - AI 系列課程}{8 hr}
+            \item \cvsubitem{2025 SCIST x 南 15 校資訊社 - AI/ML 主題課程}{4 hr}
+            \item \cvsubitem{2024 SCIST x 南 9 校資訊社 x 成大資工}{副召}
+        }
+        \item \cvitem{}{2025 北四校聯合工作坊（數位實中 x 師大附中 x 政大附中 x 松山高中）- AI/ML 講座}{講師}{}
+        \item \cvitem{}{2024 南四校聯合社課（臺南一中 x 臺南二中 x 臺南女中 x 南大附中）- AI 入門課程}{講師}{}
+        \item \cvitem{}{SCIST 南臺灣學生資訊社群 - 第 5 屆}{}{
+            \item \cvsubitem{演算法與競賽程式推廣課程 - 臺南場}{講師}
+            \item \cvsubitem{資訊安全推廣課程 - 臺南場、高雄場}{助教}
+            \item \cvsubitem{資訊人才培育計畫 - 演算法培訓課程（初階班＋進階班）}{助教}
+        }
+        \item \cvitem{}{2024 一日資訊體驗營（全台巡迴舉辦）}{總召}{
+            \item \cvsubitem{臺南場 - Python 程式設計入門課程}{講師}
+            \item \cvsubitem{臺中場 - Python 入門課程與專案開發實務}{講師}
+            \item \cvsubitem{臺北場 - 資訊安全與網路維運課程}{助教}
+        }
+        \item \cvitem{}{Hour of Code 一小時學程式 - 屏東場（偏鄉小學義教）}{助教}{}
+    \end{itemize}
+\end{minipage}
+
+\end{document}
